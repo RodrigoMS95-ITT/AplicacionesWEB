@@ -1,0 +1,57 @@
+﻿@model IEnumerable<PS01.Models.Evento>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="masthead space">
+    <div class="masthead-content">
+        <div class="container display2 space">
+            <h2 class="card-header py-2 bg-secondary">Eventos</h2>
+
+            <p>
+                <a href="@Url.Action("Create", "Eventoes")" class="btn- btn btn-primary">Nuevo Evento</a>
+            </p>
+            <table class="table card-header py-2 bg-secondary display2">
+                <tr>
+                    <th>
+                        Nombre de la ciudad
+                    </th>
+                    <th>
+                        Titulo de evento
+                    </th>
+                    <th>
+                        Fecha
+                    </th>
+                    <th>
+                        Lugar
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.City.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Date)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Place)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Editar", "Edit", new { id = item.id }, new { @class = "btn btn-default btn-success" }) |
+                            @Html.ActionLink("Detalles", "Details", new { id = item.id }, new { @class = "btn btn-default btn-info" }) |
+                            @Html.ActionLink("Borrar", "Delete", new { id = item.id }, new { @class = "btn btn-default btn-danger" })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>

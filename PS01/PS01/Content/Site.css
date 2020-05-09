@@ -1,0 +1,30 @@
+﻿body {
+    background-color: darkslategrey
+}
+
+.foto {
+    height: 100%;
+    width: 100%;
+}
+
+.space{
+    padding-top: 50px;
+}
+
+.display1{
+    color:white;
+    text-align:center;
+}
+
+.display2{
+    color: white;
+}
+
+.palabras {
+    font-size: 20px;
+    text-align: justify;
+}
+.palabras2 {
+    font-size: 20px;
+}
+

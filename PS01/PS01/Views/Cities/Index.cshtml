@@ -1,0 +1,46 @@
+﻿@model IEnumerable<PS01.Models.City>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="masthead space">
+    <div class="masthead-content">
+        <div class="container display2 space">
+            <h2 class="card-header py-2 bg-secondary">Ciudades</h2>
+
+            <p>
+                <a href="@Url.Action("Create", "Cities")" class="btn- btn btn-primary">Nueva ciudad</a>
+            </p>
+            <table class="table card-header py-2 bg-secondary display2">
+                <tr>
+                    <th>
+                        Ciudad
+                    </th>
+                    <th>
+                        Estado
+                    </th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.State)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Editar", "Edit", new { id = item.id }, new { @class = "btn btn-default btn-success" }) |
+                            @Html.ActionLink("Detalles", "Details", new { id = item.id }, new { @class = "btn btn-default btn-info" }) |
+                            @Html.ActionLink("Borrar", "Delete", new { id = item.id }, new { @class = "btn btn-default btn-danger" })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+﻿@model PS01.Models.Evento
+
+@{
+    ViewBag.Title = "Delete";
+}
+<div class="masthead space">
+    <div class="masthead-content">
+        <div class="container display2 space">
+            <h2>Eliminar</h2>
+
+            <h3>¿Seguro que quieres eliminarlo?</h3>
+            <div>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        Nombre de la ciudad
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.City.Name)
+                    </dd>
+
+                    <dt>
+                        Titulo del evento
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Title)
+                    </dd>
+
+                    <dt>
+                        Fecha
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Date)
+                    </dd>
+
+                    <dt>
+                        Lugar
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Place)
+                    </dd>
+
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                
+
+                <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+                @Html.ActionLink("Regresar", "Index", new { area = "" }, new { @class = "btn btn-default btn-info" })
+
+            </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
